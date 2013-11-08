@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace practica_6
+{
+	/// <summary>
+	/// Description of MainForm.
+	/// </summary>
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			
+			InitializeComponent();
+			
+			
+		}
+		
+		void Label6Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+		void ButTerminarClick(object sender, EventArgs e)
+		{
+			string fecha = 	monthCalendar.SelectionStart.ToShortDateString ();
+			string nom = this.textnom.Text;
+			string codigo = this.textcod.Text;
+			
+			
+			
+			string capital = "";
+			int aciertos = 0;
+			if(this.radDF.Checked){
+				capital = "DF";
+				aciertos++;
+			}
+			
+			
+			string europa;
+			if(this.checkportugal.Checked){
+				europa = "Portugal";
+				aciertos++;
+			}
+			string estados;
+			if(this.numericUpDown1.Text == "31"){
+				aciertos++;
+			}
+			string  igualmonthCalendar = monthCalendar.SelectionRange.Start.ToShortDateString();
+			if(igualmonthCalendar == "07/05/1945"){
+				aciertos++;
+			}
+			
+			
+			
+			MessageBox.Show("Nombre:"+"\t" + nom + "\n" +
+			                "Aciertos:" +"\t" + aciertos);
+			                
+			
+		}
+		
+		void Label5Click(object sender, EventArgs e)
+		{
+			
+		}
+	}
+}
